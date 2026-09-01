@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#d9c2f0">
+<title>Victor y Cristal 💗</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Parisienne&display=swap');
+
+:root{
+  --pink:#d8c1ee;
+  --pink-dark:#9b78c4;
+  --pink-soft:#f5effb;
+  --cream:#fcfaff;
+  --text:#493c57;
+  --muted:#766a80;
+  --white:rgba(255,255,255,.84);
+  --shadow:0 20px 55px rgba(91,65,120,.14);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:"DM Sans",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 10% 10%,rgba(216,193,238,.55),transparent 28%),
+    radial-gradient(circle at 90% 30%,rgba(235,222,249,.8),transparent 30%),
+    linear-gradient(135deg,#faf7ff,#eee4f8 48%,#fff);
+  overflow-x:hidden;
+}
+
+body.locked{overflow:hidden}
+
+a{text-decoration:none;color:inherit}
+
+button{
+  border:0;
+  font:inherit;
+  cursor:pointer;
+}
+
+section{
+  width:min(1100px,92%);
+  margin:auto;
+  padding:90px 0;
+}
+
+.glass{
+  background:var(--white);
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+
+/* INTRO */
+#intro{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:grid;
+  place-items:center;
+  padding:25px;
+  background:
+    radial-gradient(circle at 50% 20%,#eee3f8,transparent 35%),
+    linear-gradient(145deg,#faf7ff,#e9dcf6);
+  transition:opacity .8s,visibility .8s;
+}
+
+#intro.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
+.intro-card{
+  width:min(520px,100%);
+  padding:50px 30px;
+  border-radius:34px;
+  text-align:center;
+  position:relative;
+}
+
+.intro-heart{
+  font-size:70px;
+  animation:pulse 1.4s infinite;
+  margin-bottom:10px;
+}
+
+.script{
+  font-family:"Parisienne",cursive;
+  font-weight:400;
+}
+
+.intro-card h1{
+  font-size:clamp(45px,10vw,72px);
+  color:var(--pink-dark);
+  line-height:1;
+}
+
+.intro-card p{
+  margin:20px auto 28px;
+  color:var(--muted);
+}
+
+.primary{
+  padding:14px 28px;
+  border-radius:999px;
+  color:white;
+  font-weight:500;
+  background:linear-gradient(135deg,#b99ad8,#9b78c4);
+  box-shadow:0 10px 25px rgba(155,120,196,.25);
+  transition:.25s;
+}
+
+.primary:hover{transform:translateY(-3px);box-shadow:0 15px 30px rgba(155,120,196,.35)}
+
+/* FLOATING HEARTS */
+.hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:2;
+  overflow:hidden;
+}
+
+.float-heart{
+  position:absolute;
+  bottom:-30px;
+  opacity:.4;
+  animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+  to{transform:translateY(-110vh) rotate(25deg);opacity:0}
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.12)}
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:18px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:100;
+  width:min(700px,90%);
+  padding:9px;
+  border-radius:999px;
+  display:flex;
+  justify-content:center;
+  gap:5px;
+}
+
+nav a{
+  padding:10px 15px;
+  border-radius:999px;
+  color:#665776;
+  font-size:13px;
+  font-weight:500;
+  transition:.2s;
+}
+
+nav a:hover{
+  background:#fff;
+  color:var(--pink-dark);
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  width:100%;
+  display:grid;
+  place-items:center;
+  padding:110px 20px 60px;
+  text-align:center;
+  position:relative;
+}
+
+.hero-content{max-width:800px}
+
+.badge{
+  display:inline-block;
+  padding:9px 18px;
+  border-radius:999px;
+  background:rgba(255,255,255,.8);
+  color:var(--pink-dark);
+  font-size:13px;
+  font-weight:600;
+  margin-bottom:25px;
+  box-shadow:0 8px 25px rgba(120,60,85,.08);
+}
+
+/* FORMATO CORREGIDO PARA LOS NOMBRES */
+.hero-names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.hero-names h1, .hero-names h2 {
+  font-family: "Parisienne", cursive;
+  font-size: clamp(48px, 9vw, 95px);
+  line-height: 1;
+  color: #9b78c4;
+  font-weight: 400;
+  margin: 0;
+}
+
+.hero p{
+  max-width:600px;
+  margin:auto;
+  color:var(--muted);
+  line-height:1.8;
+}
+
+.counter-title {
+  margin-top: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--pink-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.counter-box {
+  margin: 12px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.counter-item {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 10px 18px;
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(155, 120, 196, 0.12);
+  min-width: 75px;
+}
+
+.counter-item span {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--pink-dark);
+}
+
+.counter-item label {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.hero-photo{
+  margin:35px auto 0;
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  padding:7px;
+  background:white;
+  box-shadow:0 20px 50px rgba(91,65,120,.16);
+  transition: transform .3s ease;
+}
+
+.hero-photo:hover{
+  transform: scale(1.05);
+}
+
+.hero-photo img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+/* HEADINGS */
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title .mini{
+  color:var(--pink-dark);
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.section-title h2{
+  font-family:"Parisienne",cursive;
+  font-size:clamp(45px,8vw,72px);
+  color:#9b78c4;
+  font-weight:400;
+  margin-top:3px;
+}
+
+.section-title p{
+  color:var(--muted);
+  max-width:600px;
+  margin:8px auto 0;
+}
+
+/* STORY */
+.story-card{
+  border-radius:30px;
+  padding:35px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  align-items:center;
+}
+
+.story-image{
+  min-height:380px;
+  border-radius:24px;
+  overflow:hidden;
+}
+
+.story-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.story-text h3{
+  font-size:28px;
+  margin-bottom:15px;
+}
+
+.story-text p{
+  color:var(--muted);
+  line-height:1.9;
+  margin-bottom:18px;
+}
+
+.quote{
+  border-left:3px solid var(--pink);
+  padding-left:18px;
+  font-family:"Parisienne",cursive;
+  font-size:30px;
+  color:#b95b82;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.photo{
+  height:300px;
+  border-radius:23px;
+  overflow:hidden;
+  position:relative;
+  cursor:pointer;
+  box-shadow:var(--shadow);
+}
+
+.photo:nth-child(2),.photo:nth-child(5){transform:translateY(25px)}
+
+.photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.photo:hover img{transform:scale(1.08)}
+
+.photo span{
+  position:absolute;
+  left:14px;
+  bottom:14px;
+  padding:7px 14px;
+  background:rgba(255,255,255,.85);
+  border-radius:999px;
+  font-size:12px;
+  font-weight:500;
+  backdrop-filter:blur(8px);
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  padding:28px;
+  border-radius:26px;
+  transition:.25s;
+}
+
+.card:hover{transform:translateY(-7px)}
+
+.card .emoji{
+  font-size:38px;
+  margin-bottom:18px;
+  display:inline-block;
+  animation:floatEmoji 2.5s ease-in-out infinite;
+}
+
+.card:nth-child(2) .emoji {
+  animation-delay: 0.8s;
+}
+
+.card:nth-child(3) .emoji {
+  animation-delay: 1.6s;
+}
+
+@keyframes floatEmoji {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-6px) rotate(-4deg);
+  }
+  75% {
+    transform: translateY(3px) rotate(4deg);
+  }
+}
+
+.card h3{margin-bottom:9px}
+
+.card p{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:14px;
+}
+
+/* TIMELINE */
+.timeline{
+  position:relative;
+  max-width:750px;
+  margin:auto;
+}
+
+.timeline:before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:#cdb8e5;
+  transform:translateX(-50%);
+}
+
+.timeline-item{
+  width:50%;
+  padding:0 35px 40px;
+  position:relative;
+}
+
+.timeline-item:nth-child(even){margin-left:50%}
+
+.timeline-item:after{
+  content:"♥";
+  position:absolute;
+  top:0;
+  right:-12px;
+  width:24px;
+  height:24px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:#fff;
+  color:#9b78c4;
+  font-size:11px;
+  box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+.timeline-item:nth-child(even):after{left:-12px}
+
+.timeline-item .date{
+  color:#9b78c4;
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:7px;
+}
+
+.timeline-item h3{margin-bottom:8px}
+
+.timeline-item p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* LETTER */
+.letter{
+  max-width:750px;
+  margin:auto;
+  padding:45px;
+  border-radius:30px;
+  text-align:center;
+}
+
+.letter .seal{
+  font-size:45px;
+  margin-bottom:15px;
+  display:inline-block;
+  animation:floatEmoji 2.5s ease-in-out infinite;
+}
+
+.letter h3{
+  font-family:"Parisienne",cursive;
+  font-size:45px;
+  color:#9b78c4;
+  font-weight:400;
+}
+
+.letter p{
+  color:var(--muted);
+  line-height:2;
+  margin-top:20px;
+}
+
+/* ANIMACIONES */
+.glowing-text {
+  color: #9b78c4;
+  display: inline-block;
+  animation: textGlow 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(155, 120, 196, 0.4), 0 0 10px rgba(155, 120, 196, 0.2);
+    transform: scale(1);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(155, 120, 196, 0.9), 0 0 25px rgba(216, 193, 238, 0.9), 0 0 35px rgba(155, 120, 196, 0.6);
+    transform: scale(1.03);
+  }
+}
+
+/* EMOJIS CON ANIMACIÓN INDEPENDIENTE */
+.emoji-indep-1 {
+  display: inline-block;
+  animation: floatEmoji 2.5s ease-in-out infinite;
+}
+
+.emoji-indep-2 {
+  display: inline-block;
+  animation: floatEmoji 2.8s ease-in-out infinite;
+  animation-delay: 0.7s;
+}
+
+/* FINAL */
+.final{
+  min-height:70vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+}
+
+.final-card{
+  padding:55px 30px;
+  border-radius:35px;
+  width:min(750px,100%);
+}
+
+.final-card h2{
+  font-family:"Parisienne",cursive;
+  color:#9b78c4;
+  font-size:clamp(55px,10vw,90px);
+  font-weight:400;
+  line-height:1;
+}
+
+.final-card p{
+  color:var(--muted);
+  margin:20px auto 28px;
+  max-width:500px;
+  line-height:1.8;
+}
+
+.final-buttons{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  flex-wrap:wrap;
+  position:relative;
+  min-height:50px;
+}
+
+.no-btn{
+  padding:14px 25px;
+  border-radius:999px;
+  background:white;
+  color:#766a80;
+  box-shadow:0 7px 20px rgba(91,65,120,.08);
+  transition: transform 0.2s ease;
+}
+
+footer{
+  text-align:center;
+  padding:35px 20px 50px;
+  color:#9688a3;
+  font-size:13px;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  background:rgba(58,42,76,.65);
+  display:none;
+  place-items:center;
+  padding:20px;
+  backdrop-filter:blur(8px);
+}
+
+.modal.show{display:grid}
+
+.modal-box{
+  width:min(650px,100%);
+  padding:15px;
+  background:white;
+  border-radius:25px;
+  position:relative;
+}
+
+.modal-box img{
+  width:100%;
+  max-height:75vh;
+  object-fit:contain;
+  border-radius:18px;
+}
+
+.close{
+  position:absolute;
+  right:12px;
+  top:12px;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:white;
+  box-shadow:0 5px 15px rgba(0,0,0,.15);
+  z-index:3;
+}
+
+/* MUSIC */
+.music{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:150;
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:rgba(255,255,255,.8);
+  box-shadow:0 10px 25px rgba(80,40,60,.13);
+  backdrop-filter:blur(12px);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+/* TOAST */
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  transform:translate(-50%,30px);
+  opacity:0;
+  pointer-events:none;
+  background:#554563;
+  color:white;
+  padding:13px 20px;
+  border-radius:999px;
+  z-index:900;
+  transition:.3s;
+  font-size:14px;
+}
+
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* RESPONSIVE */
+@media(max-width:750px){
+  nav{
+    overflow-x:auto;
+    justify-content:flex-start;
+    white-space:nowrap;
+  }
+
+  nav a{font-size:12px;padding:9px 12px}
+
+  section{padding:70px 0}
+
+  .story-card{
+    grid-template-columns:1fr;
+    padding:20px;
+  }
+
+  .story-image{min-height:300px}
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .photo{height:220px}
+
+  .photo:nth-child(2),.photo:nth-child(5){transform:none}
+
+  .cards{grid-template-columns:1fr}
+
+  .timeline:before{left:10px}
+
+  .timeline-item,.timeline-item:nth-child(even){
+    width:100%;
+    margin-left:0;
+    padding-left:35px;
+    padding-right:0;
+  }
+
+  .timeline-item:after,
+  .timeline-item:nth-child(even):after{
+    left:-2px;
+    right:auto;
+  }
+
+  .letter{padding:30px 22px}
+}
+
+@media(max-width:430px){
+  .gallery{grid-template-columns:1fr}
+
+  .photo{height:300px}
+
+  .hero-photo{width:135px;height:135px}
+}
+</style>
+</head>
+
+<body class="locked">
+
+<audio id="music" loop>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<div id="intro">
+  <div class="intro-card glass">
+    <div class="intro-heart">💗</div>
+    <h1 class="script">Victor y Cristal</h1>
+    <p>Una pequeña página hecha para guardar nuestros recuerdos juntos.</p>
+    <button class="primary" onclick="enterSite()">Abrir nuestro recuerdo ✨</button>
+  </div>
+</div>
+
+<div class="hearts" id="hearts"></div>
+
+<nav class="glass">
+  <a href="#inicio">Inicio</a>
+  <a href="#historia">Historia</a>
+  <a href="#fotos">Fotos</a>
+  <a href="#momentos">Momentos</a>
+  <a href="#carta">Carta</a>
+</nav>
+
+<main id="inicio">
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">♡ Una historia que seguimos escribiendo ♡</span>
+
+      <!-- NOMBRES EN FORMATO FLEXIBLE Y ALINEADOS -->
+      <div class="hero-names">
+        <h1 class="script glowing-text">Victor</h1>
+        <h2 class="script glowing-text">& Cristal</h2>
+      </div>
+
+      <p>
+        No sé exactamente qué nos espera mañana, pero sí sé que quiero seguir acumulando recuerdos, risas y momentos contigo.
+      </p>
+
+      <div class="counter-title">Tiempo desde que nos conocimos</div>
+      <div class="counter-box" id="counterBox">
+        <div class="counter-item"><span id="days">0</span><label>Días</label></div>
+        <div class="counter-item"><span id="hours">0</span><label>Horas</label></div>
+        <div class="counter-item"><span id="minutes">0</span><label>Minutos</label></div>
+        <div class="counter-item"><span id="seconds">0</span><label>Segundos</label></div>
+      </div>
+
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=500&q=85" alt="Victor y Cristal">
+      </div>
+    </div>
+  </section>
+
+  <section id="historia">
+    <div class="section-title">
+      <div class="mini">Nuestra historia</div>
+      <h2 class="glowing-text">Todo comenzó...</h2>
+      <p>Porque algunas historias no necesitan ser perfectas para ser especiales.</p>
+    </div>
+
+    <div class="story-card glass">
+      <div class="story-image">
+        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1000&q=85" alt="Recuerdo especial">
+      </div>
+
+      <div class="story-text">
+        <h3>El 1 de junio de 2024</h3>
+        <p>
+          Aquel 1 de junio de 2024 nuestras vidas se cruzaron por primera vez. Jamás imaginé que algo tan sencillo como ayudarte con tu computadora, cambiando el idioma de inglés a español, sería el inicio de una historia tan especial. Aquella pequeña ayuda marcó un antes y un después en nuestras vidas.
+        </p>
+
+        <p>
+          Con el paso del tiempo llegaron las conversaciones interminables, las risas compartidas, los chistes que solo nosotros entendíamos y esas pequeñas experiencias llenas de emoción que, sin darnos cuenta, se transformaron en momentos inolvidables. Cada instante fue construyendo recuerdos que hoy guardamos con cariño y que forman parte de una historia que comenzó de la manera más inesperada.
+        </p>
+
+        <div class="quote">
+          “De todas las casualidades, tú eres mi favorita.”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fotos">
+    <div class="section-title">
+      <div class="mini">Nuestros recuerdos</div>
+      <h2 class="glowing-text">Momentos que guardo</h2>
+      <p>Haz clic en una foto para verla más grande.</p>
+    </div>
+
+    <div class="gallery">
+      <div class="photo" onclick="openImage(this)">
+        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=85" alt="Foto 1" loading="lazy">
+        <span>Primeros momentos 💕</span>
+      </div>
+
+      <div class="photo" onclick="openImage(this)">
+        <img src="https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=900&q=85" alt="Foto 2" loading="lazy">
+        <span>Una tarde especial ✨</span>
+      </div>
+
+      <div class="photo" onclick="openImage(this)">
+        <img src="https://images.unsplash.com/photo-1501901609772-df0848060b33?auto=format&fit=crop&w=900&q=85" alt="Foto 3" loading="lazy">
+        <span>Una aventura ❤️</span>
+      </div>
+
+      <div class="photo" onclick="openImage(this)">
+        <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?auto=format&fit=crop&w=900&q=85" alt="Foto 4" loading="lazy">
+        <span>Juntos</span>
+      </div>
+
+      <div class="photo" onclick="openImage(this)">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=85" alt="Foto 5" loading="lazy">
+        <span>Un recuerdo más 🌷</span>
+      </div>
+
+      <div class="photo" onclick="openImage(this)">
+        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=85" alt="Foto 6" loading="lazy">
+        <span>Y los que faltan...</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="momentos">
+    <div class="section-title">
+      <div class="mini">Lo que más me gusta</div>
+      <h2 class="glowing-text">Pequeñas cosas</h2>
+      <p>Porque muchas veces el amor está escondido en los detalles.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card glass">
+        <div class="emoji">😂</div>
+        <h3>Nuestras risas</h3>
+        <p>Esas conversaciones que empiezan normales y terminan haciéndonos reír por cualquier tontería.</p>
+      </div>
+
+      <div class="card glass">
+        <div class="emoji">🌙</div>
+        <h3>Las noches</h3>
+        <p>Cuando el tiempo parece pasar más rápido porque estamos hablando, compartiendo o simplemente juntos.</p>
+      </div>
+
+      <div class="card glass">
+        <div class="emoji">🫶</div>
+        <h3>Tu compañía</h3>
+        <p>No siempre necesitamos hacer algo extraordinario. A veces estar contigo ya es suficiente.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title">
+      <div class="mini">Nuestra línea del tiempo</div>
+      <h2 class="glowing-text">Algunos capítulos</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="date">1 DE JUNIO DE 2024</div>
+        <h3>Nos conocimos</h3>
+        <p>El día exacto en que empezó esta bonita coincidencia al cambiar el idioma de la computadora.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="date">CAPÍTULO 02</div>
+        <h3>La primera salida</h3>
+        <p>Fue aquel sábado en Ágora Mall donde te regalé rosas eternas de tu color favorito, lila. Fue la primera vez que te robé un beso.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="date">CAPÍTULO 03</div>
+        <h3>Un momento inolvidable</h3>
+        <p>Fue cuando acampamos juntos en Boca de Yuma, justo en la orilla de la playa. Fue nuestra primera vez acampando juntos.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="date">HOY</div>
+        <h3>Seguimos escribiendo...</h3>
+        <p>Y esta historia todavía tiene muchísimas páginas por llenar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="carta">
+    <div class="section-title">
+      <div class="mini">Una última cosa</div>
+      <h2 class="glowing-text">Una carta para ti</h2>
+    </div>
+
+    <div class="letter glass">
+      <div class="seal">💌</div>
+      <h3>Para mi Pollo</h3>
+
+      <p>
+        Quería hacer algo diferente para recordarte que eres una parte
+        muy especial de mi vida. No importa cuántos días pasen ni cuántas
+        cosas cambien; siempre habrá recuerdos que me harán sonreír.
+      </p>
+
+      <p>
+        Gracias por cada conversación, cada risa, cada abrazo y cada
+        momento compartido. Gracias por ser tú.
+      </p>
+
+      <p>
+        Ojalá podamos seguir creando historias, que podamos conocer lugares, tomar fotos, riéndonos de cosas insignificantes y llenando esta página con muchos recuerdos nuevos.
+      </p>
+
+      <p class="script glowing-text" style="font-size: 38px;">
+        AlwaysToMuch🤍✨
+      </p>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="final-card glass">
+      <!-- EMOJIS CON ANIMACIÓN INDEPENDIENTE -->
+      <div style="font-size:50px;margin-bottom:12px;">
+        <span class="emoji-indep-1">🥹</span><span class="emoji-indep-2">💗</span>
+      </div>
+
+      <h2>¿Seguimos escribiendo nuestra historia?</h2>
+
+      <p>
+        Porque si depende de mí, todavía nos quedan muchísimas aventuras,
+        citas, fotos, risas y momentos por vivir.
+      </p>
+
+      <div class="final-buttons">
+        <button class="primary" onclick="sayYes()">Sí, por supuesto 💗</button>
+        <button class="no-btn" onclick="moveNo(this)">No 😳</button>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Victor & Cristal ♥ · Nuestra historia continúa...
+</footer>
+
+<!-- MODAL DE FOTOS -->
+<div class="modal" id="imageModal" onclick="closeImage(event)">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()">✕</button>
+    <img id="modalImage" src="" alt="Foto ampliada">
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<button class="music" id="musicButton" onclick="toggleMusic()" title="Música">♫</button>
+
+<script>
+/* FECHA DE INICIO DE RELACIÓN: 1 DE JUNIO DE 2024 */
+const START_DATE = new Date("2024-06-01T00:00:00");
+
+function updateCounter() {
+  const now = new Date();
+  const diff = now - START_DATE;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / 1000 / 60) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  document.getElementById("days").textContent = days;
+  document.getElementById("hours").textContent = hours;
+  document.getElementById("minutes").textContent = minutes;
+  document.getElementById("seconds").textContent = seconds;
+}
+setInterval(updateCounter, 1000);
+updateCounter();
+
+/* ENTRADA Y MÚSICA */
+function enterSite(){
+  document.getElementById("intro").classList.add("hide");
+  document.body.classList.remove("locked");
+  createHearts(15);
+
+  const music = document.getElementById("music");
+  if(music){
+    music.play().then(() => {
+      document.getElementById("musicButton").textContent = "🔊";
+    }).catch(()=>{});
+  }
+}
+
+/* CORAZONES FLOTANTES */
+function createHeart(){
+  const container = document.getElementById("hearts");
+  const heart = document.createElement("div");
+
+  heart.className = "float-heart";
+  heart.textContent = ["♥","♡","💗","💕","✦"][Math.floor(Math.random()*5)];
+
+  heart.style.left = Math.random()*100 + "%";
+  heart.style.fontSize = (12 + Math.random()*22) + "px";
+  heart.style.animationDuration = (7 + Math.random()*8) + "s";
+
+  container.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),16000);
+}
+
+function createHearts(amount=1){
+  for(let i=0;i<amount;i++){
+    setTimeout(createHeart,i*250);
+  }
+}
+
+setInterval(createHeart,1800);
+
+/* GALERÍA */
+function openImage(element){
+  const img = element.querySelector("img");
+  document.getElementById("modalImage").src = img.src;
+  document.getElementById("imageModal").classList.add("show");
+}
+
+function closeImage(event){
+  if(event.target.id === "imageModal"){
+    closeModal();
+  }
+}
+
+function closeModal(){
+  document.getElementById("imageModal").classList.remove("show");
+}
+
+/* BOTÓN "NO" */
+function moveNo(button){
+  const maxX = Math.min(window.innerWidth - 140, 250);
+  const x = (Math.random()-.5)*maxX;
+  const y = (Math.random()-.5)*100;
+
+  button.style.transform = `translate(${x}px,${y}px)`;
+  showToast("Ese botón parece tener otros planes... 👀");
+}
+
+/* RESPUESTA FINAL */
+function sayYes(){
+  createHearts(35);
+
+  document.querySelector(".final-card h2").textContent =
+    "Sabía que dirías que sí 🥹💗";
+
+  document.querySelector(".final-card p").textContent =
+    "Entonces queda oficialmente decidido: nos quedan muchísimos recuerdos por crear juntos.";
+
+  document.querySelector(".final-buttons").innerHTML =
+    '<button class="primary" onclick="createHearts(25)">Celebrarlo 💕</button>';
+
+  showToast("¡Tenemos una nueva aventura! 💗");
+}
+
+/* TOAST NOTIFICACIONES */
+let toastTimer;
+
+function showToast(message){
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>{
+    toast.classList.remove("show");
+  },2500);
+}
+
+/* MÚSICA */
+function toggleMusic(){
+  const music = document.getElementById("music");
+
+  if(!music){
+    showToast("Agrega un archivo musica.mp3 para activar la música 🎵");
+    return;
+  }
+
+  if(music.paused){
+    music.play().then(() => {
+      document.getElementById("musicButton").textContent = "🔊";
+    }).catch(() => {
+      showToast("No se pudo reproducir musica.mp3");
+    });
+  }else{
+    music.pause();
+    document.getElementById("musicButton").textContent = "♫";
+  }
+}
+
+/* TECLA ESC */
+document.addEventListener("keydown",e=>{
+  if(e.key === "Escape") closeModal();
+});
+</script>
+
+</body>
+</html>
