@@ -751,8 +751,10 @@ footer{
 
 <body class="locked">
 
-<audio id="music" loop>
+<!-- AUDIO OPTIMIZADO -->
+<audio id="music" loop preload="auto">
   <source src="musica.mp3" type="audio/mpeg">
+  Tu navegador không soporta audio.
 </audio>
 
 <div id="intro">
@@ -798,7 +800,7 @@ footer{
       </div>
 
       <div class="hero-photo">
-        <img src="principal.jpeg" alt="Victor y Cristal">
+        <img src="principal.jpeg" alt="Victor y Cristal" loading="eager">
       </div>
     </div>
   </section>
@@ -812,7 +814,7 @@ footer{
 
     <div class="story-card glass">
       <div class="story-image">
-        <img src="historia.jpeg" alt="Recuerdo especial">
+        <img src="historia.jpeg" alt="Recuerdo especial" loading="lazy">
       </div>
 
       <div class="story-text">
@@ -1034,7 +1036,9 @@ function enterSite(){
   if(music){
     music.play().then(() => {
       document.getElementById("musicButton").textContent = "🔊";
-    }).catch(()=>{});
+    }).catch(()=>{
+      showToast("Haz clic en el botón de música ♫ si deseas activarla");
+    });
   }
 }
 
